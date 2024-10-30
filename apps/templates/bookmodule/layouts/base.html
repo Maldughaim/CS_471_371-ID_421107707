@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+ <title>{% block title %} {% endblock title %}</title>
+ <meta name="keywords" content="Books, recent, Learning, library">
+ <meta name="description" content="Books website">
+ <meta name="author" content="author name">
+ <link rel="icon" href="{% static 'qu-icon.jpeg' %}">
+ <meta charset="UTF-8">
+ <link rel="stylesheet" href="{% static 'style.css' %}"> <!-- include css file -->
+ <style>{% block stylesheets %}{% endblock stylesheets %}</style>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fontawesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+ {% include "bookmodule/includes/header.html" %}
+ {% block content %} {% endblock content %}
+ {% include "bookmodule/includes/footer.html" %}
+</body>
+</html>

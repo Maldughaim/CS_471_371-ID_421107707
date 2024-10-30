@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Tables</title>
+</head>
+<body>
+    <div class="ft">
+        <div class="f-table">
+            <table class="s-table">
+                <tr>
+                    <td colspan="2" rowspan="2" style="border:none"><h2>Table of Fruits and their prices</h2></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <th>Fruit</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>$0.25</td>
+                </tr>
+                <tr>
+                    <td>Orange</td>
+                    <td>$0.50</td>
+                </tr>
+                <tr>
+                    <td>Banana</td>
+                    <td>$1.00</td>
+                </tr>
+                <tr>
+                    <td>Pineapple</td>
+                    <td>$2.00</td>
+                </tr>
+                <tr>
+                    <th>Total</th>
+                    <th>$3.75</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="bt">
+        <div>
+            <table class="b-table">
+                <tr>
+                    <th colspan="5" style="padding-left: 250px;padding-right: 250px;border:none">A more complix sample table</th>
+                </tr>
+                <tr>
+                    <td rowspan="2"><img src="{% static 'img.png' %}"></td>
+                    <th colspan="4" style="padding-left: 250px;padding-right: 250px;">Camile</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>C</th>
+                    <th>D</th>
+                </tr>
+                <tr>
+                    <th>ABC</th>
+                    <td>1</td>
+                    <td>AA</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>DEF</th>
+                    <td>2</td>
+                    <td>BB</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <th>GHI</th>
+                    <td>CC</td>
+                    <td>3</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: lightyellow;
+    color: lightgreen;
+    padding: 30px;
+}
+
+table{
+     border-collapse: collapse;
+     table-layout: auto;
+}
+
+.s-table td,.s-table th{
+    border: 2px solid;
+    text-align: center;
+    max-width: 150px;
+}
+
+.b-table td,.b-table th{
+    border: 2px solid;
+    text-align: center;
+}
+
+.b-table{
+    width: 500px;
+}
+
+.ft{
+    display: flex;                /* Enable Flexbox */
+    justify-content: center;      /* Center horizontally */
+    align-items: center;
+    padding: 10px;
+}
+
+.bt{
+    display: flex;                /* Enable Flexbox */
+    justify-content: center;      /* Center horizontally */
+    align-items: center;
+    padding: 10px;
+}
+
+.a{
+    background-color: lightgreen;
+    height: 100px; /* or any height you prefer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b{
+    background-color: lightblue;
+    height: 100px; /* or any height you prefer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c{
+    background-color: lightyellow;
+    height: 100px; /* or any height you prefer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#d:visited{
+    color: red;
+}
+
+#d:hover{
+    color: purple;
+}
+
+#d:active{
+    color: gray;
+}
+
+#e:visited{
+    color: red;
+}
+
+#e:hover{
+    color: purple;
+}
+
+#e:active{
+    color: gray;
+}
+
+#f:visited{
+    color: red;
+}
+
+#f:hover{
+    color: purple;
+}
+
+#f:active{
+    color: gray;
+}

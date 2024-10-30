@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Links</title>
+</head>
+<body>
+    <div class="a">
+        <a href="https://qu.edu.sa/" id="d" target="_blank">Opens QU website on new tab</a>
+    </div>
+    <div class="b">
+        <a href="https://qu.edu.sa/" id="e" target="_parent">Opens QU website on new window</a>
+    </div>
+    <div class="c">
+        <a href="https://qu.edu.sa/" id="f" target="_self">Opens QU website on the same tab</a>
+    </div>
+
+</body>
+</html>

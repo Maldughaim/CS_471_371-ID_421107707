@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Listing</title>
+</head>
+<body>
+    <h1>This is the best feature in the Internet</h1>
+    <ul>
+    <li>Item 1</li>
+    <li>Item 2
+        <ul>
+            <li>Subitem 1</li>
+            <li>
+                Subitem 2
+                <ol>
+                    <li>Sub-subitem 1</li>
+                    <li>Sub-subitem 2</li>
+                </ol>
+            </li>
+            <li>Subitem 3</li>
+            <li>Subitem 4</li>
+            <li>Subitem 5</li>
+            <li>
+                Subitem 6
+                <ol>
+                    <li>Sub-subitem 3</li>
+                    <li>Sub-subitem 4</li>
+                    <li>Sub-subitem 5</li>
+                    <li>Sub-subitem 6</li>
+                    <li>Sub-subitem 7</li>
+                </ol>
+            </li>
+        </ul>
+    </li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+</ul>
+
+
+</body>
+</html>
