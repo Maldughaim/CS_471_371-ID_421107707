@@ -1,0 +1,18 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block stylesheets %}
+ul li:not(:last-child) {
+    margin-bottom: 15px;
+}
+{% endblock stylesheets %}
+{% block content %}
+<h1>Number of Students in each city</h1>
+
+        <ul>
+            {% for a in arr %}
+                <li>
+                    <strong>{{ a.city }}</strong><br>
+                    {{ a.n }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+{% endblock content %}

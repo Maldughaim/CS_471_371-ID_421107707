@@ -1,0 +1,14 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block content %}
+<form role="form" method="post" action="{% url 'users.login_user' %}">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit" name="login">Log in</button>
+</form>
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.bookmodule',
     'apps.usermodule',
+    'django_recaptcha',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,14 @@ STATICFILES_DIRS = [(os.path.join(BASE_DIR, "apps/static"))]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+RECAPTCHA_PUBLIC_KEY = '6Lf2g4gqAAAAAAL3blbhakfHalrDLDDsisBXqSPT'
+RECAPTCHA_PRIVATE_KEY = '6Lf2g4gqAAAAAHj7RBwui0IAExA7LnRpLPSsTZcz'
+
+# set up media root
+# this folder should be outside your app directory
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 31457280
+FILE_UPLOAD_MAX_MEMORY_SIZE = 31457280

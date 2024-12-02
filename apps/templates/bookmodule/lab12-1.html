@@ -1,0 +1,21 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block title %}Interactive Page{% endblock %}
+{% block content %}
+    <button id="changeColorButton">Change Background Color</button>
+    <button id="changeTextButton">Change Text</button>
+    <div id="myDiv">Initial Text</div>
+
+    <script>
+        const divElement = document.getElementById('myDiv');
+        const changeColorButton = document.getElementById('changeColorButton');
+        const changeTextButton = document.getElementById('changeTextButton');
+
+        changeColorButton.addEventListener('click', () => {
+            divElement.style.backgroundColor = 'lightblue'; // Change to desired color
+        });
+
+        changeTextButton.addEventListener('click', () => {
+            divElement.textContent = 'Text Updated!'; // Update the text
+        });
+    </script>
+{% endblock content %}

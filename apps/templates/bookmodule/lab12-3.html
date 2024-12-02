@@ -1,0 +1,23 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block title %}Toggle Div Visibility{% endblock %}
+{% block content %}
+    <button id="toggleButton">Hide</button>
+    <div id="toggleDiv" style="margin-top: 10px; padding: 10px; background-color: lightgray;">
+        This is a toggleable div element.
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const toggleDiv = document.getElementById('toggleDiv');
+
+        toggleButton.addEventListener('click', () => {
+            if (toggleDiv.style.display === 'none') {
+                toggleDiv.style.display = 'block';
+                toggleButton.textContent = 'Hide';
+            } else {
+                toggleDiv.style.display = 'none';
+                toggleButton.textContent = 'Show';
+            }
+        });
+    </script>
+{% endblock content %}

@@ -1,0 +1,82 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block stylesheets %}
+ul li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+button {
+        background-color: var(--btn-color, #555); /* Default color if none provided */
+        color: #fff; /* Text color */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 5px 10px; /* Padding for a comfortable size */
+        font-size: 12px; /* Readable font size */
+        font-family: Arial, sans-serif; /* Clean font */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    }
+
+    button:hover {
+        background-color: #444; /* Slightly darker on hover */
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    button:active {
+        transform: scale(1); /* Reset scale on click */
+        background-color: #333; /* Even darker when clicked */
+    }
+.add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+.red-button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+        position: absolute;
+        right: 20px; /* Adjust as needed */
+        top: 40px;  /* Optional: Adjust vertical position */
+        text-align: center;
+    }
+
+    .red-button:hover {
+        background-color: darkred; /* Darker red for hover effect */
+    }
+{% endblock stylesheets %}
+{% block content %}
+
+<h1>Image List</h1>
+    <a class="red-button" href="{% url 'users.logout_user' %}" >Logout</a>
+    <a href="{% url 'books.addimage' %}" class="add-button">Add new Image</a>
+    {% if images %}
+        <ul>
+            {% for image in images %}
+                <li>
+                    <img src="{{ image.coverPage.url }}" alt="Image">
+                    <form action="{% url 'books.deleteimage' id=image.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" style="background-color: #f54242">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No Images found matching your criteria.</p>
+    {% endif %}
+{% endblock content %}

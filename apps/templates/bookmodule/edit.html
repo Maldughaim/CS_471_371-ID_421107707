@@ -1,0 +1,93 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block stylesheets %}
+ .container {
+            width: 40%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group input[type="submit"]:focus {
+            outline: none;
+        }
+
+{% endblock stylesheets %}
+{% block content %}
+
+<div class="container">
+    <h2>Edit Book Information</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter book title" value="{{ book.title }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" placeholder="Enter author name" value="{{ book.author }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="edition">Edition</label>
+            <input type="text" id="edition" name="edition" placeholder="Enter book edition" value="{{ book.edition }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price ($)</label>
+            <input type="number" step="0.01" id="price" name="price" placeholder="Enter book price" value="{{ book.price }}" required>
+        </div>
+        <input type="number" name="id" hidden="hidden" value="{{ book.id }}" required>
+        <input type="text" name="edit" hidden="hidden" value="edit" required>
+
+        <div class="form-group">
+            <input type="submit" value="Save Changes" required min="0">
+        </div>
+    </form>
+</div>
+{% endblock content %}

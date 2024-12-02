@@ -1,0 +1,20 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block title %}Add to List{% endblock %}
+{% block content %}
+    <button id="addItemButton">Add Item</button>
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <script>
+        const button = document.getElementById('addItemButton');
+        const itemList = document.getElementById('itemList');
+
+        button.addEventListener('click', () => {
+            const newItem = document.createElement('li');
+            newItem.textContent = `Item ${itemList.children.length + 1}`; // Generate a new item name
+            itemList.appendChild(newItem); // Add the new item to the list
+        });
+    </script>
+{% endblock content %}

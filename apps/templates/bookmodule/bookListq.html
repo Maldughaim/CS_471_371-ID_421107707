@@ -1,0 +1,73 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block stylesheets %}
+ul li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+button {
+        background-color: var(--btn-color, #555); /* Default color if none provided */
+        color: #fff; /* Text color */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 5px 10px; /* Padding for a comfortable size */
+        font-size: 12px; /* Readable font size */
+        font-family: Arial, sans-serif; /* Clean font */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+    }
+
+    button:hover {
+        background-color: #444; /* Slightly darker on hover */
+        transform: scale(1.05); /* Slight zoom on hover */
+    }
+
+    button:active {
+        transform: scale(1); /* Reset scale on click */
+        background-color: #333; /* Even darker when clicked */
+    }
+.add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green color */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+{% endblock stylesheets %}
+{% block content %}
+
+<h1>Book List</h1>
+    <a href="{% url 'books.addb' %}" class="add-button">Add new Book</a>
+    {% if books %}
+        <ul>
+            {% for book in books %}
+                <li>
+                    <strong>{{ book.title }}</strong><br>
+                    ID: {{ book.id }}<br>
+                    Author: {{ book.author }}<br>
+                    Edition: {{ book.edition }}<br>
+                    Price: {{ book.price }}<br>
+                    <form action="{% url 'books.edit' id=book.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="id" value="{{ book.id }}">
+                        <button type="submit" style="background-color: #f59842;margin-bottom: 10px;margin-top: 5px">Edit</button>
+                    </form>
+
+                    <form action="{% url 'books.delete' id=book.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" style="background-color: #f54242">Delete</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No books found matching your criteria.</p>
+    {% endif %}
+{% endblock content %}

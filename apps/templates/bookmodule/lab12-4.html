@@ -1,0 +1,23 @@
+{% extends "bookmodule/layouts/base.html" %}
+{% block title %}Hover Effect{% endblock %}
+{% block content %}
+    <div id="hoverDiv" style="width: 200px; height: 100px; background-color: lightgray; text-align: center; line-height: 100px;">
+        Hover over me!
+    </div>
+
+    <script>
+        const hoverDiv = document.getElementById('hoverDiv');
+
+        // Add hover effects
+        hoverDiv.addEventListener('mouseover', () => {
+            hoverDiv.style.backgroundColor = 'lightblue'; // Change background color
+            hoverDiv.style.fontSize = '20px'; // Change font size
+        });
+
+        // Reset styles when the mouse leaves
+        hoverDiv.addEventListener('mouseout', () => {
+            hoverDiv.style.backgroundColor = 'lightgray'; // Reset background color
+            hoverDiv.style.fontSize = '16px'; // Reset font size
+        });
+    </script>
+{% endblock content %}
